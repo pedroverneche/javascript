@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>salário femino15/masculino12</title>
+    <style>
+        body{
+            background: rgb(0, 0, 0);
+            font: normal 20pt Arial;
+            color: white;
+        }
+        h1{
+            color: rgb(0, 255, 255);
+        }
+        button{
+            height: 100px;
+            width: 200px;
+            font-size: 15pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aumento salarial</h1>
+    <button onclick="clicar()", id="area">Clique aqui</button>
+    <section id="result">
+        <p>Com base no sexo do empregado, iremos calcular o novo salário...</p>
+    </section>
+    <script>
+        var a = document.getElementById('area')
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){
+            let nome = window.prompt('Qual o seu nome')
+            let sex = window.prompt('Qual o seu sexo? M/F')
+            let sal = Number(window.prompt('Digite seu salário atual R$'))
+            var salFEM = sal +(sal * 15)/100
+            var salMAS = sal +(sal * 12)/100
+            let res = document.querySelector("section#result")
+            if(sex == 'm'){
+                res.innerHTML = `<p>Nome: ${nome}</br>Sexo: ${sex}</br>Salário atual: R$${sal}</br>Aumento salarial de 12%: R$${salMAS}</p`
+            }else if(sex == 'f'){
+                res.innerHTML = `<p>Nome: ${nome}</br>Sexo: ${sex}</br>Salário atual: R$${sal}</br>Aumento salarial de 15%: R$${salFEM}</p`
+            }
+
+        }
+        function entrar(){
+            a.style.background = 'rgb(0, 255, 255)'
+        }
+        function sair(){
+            a.style.background = 'white'
+        }
+    </script>
+</body>
+</html>

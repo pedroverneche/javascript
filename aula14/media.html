@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+    <p>Digite os números e mostraremos a média entre eles</p>
+    <input type="number" id="n1">
+    <input type="number" id="n2">
+    <button onclick="calcular()" id="media">calcular média</button>
+    <div id="res">Média: N/A</div>
+    <script>
+        function media(){
+            let n1 = parseInt(document.getElementById("n1").value)
+            let n2 = parseInt(document.getElementById("n2").value)
+            let soma = n1 + n2 
+            let m = soma / 2
+            return m
+        }
+        function calcular(){
+            let res = document.getElementById("res")
+            res.innerHTML = `Média: ${media().toFixed(1)}`
+        }
+       
+    </script>
+</body>
+</html>

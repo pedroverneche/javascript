@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comendo Pizza</title>
+    <style>
+        body{
+            background: rgb(129, 10, 10);
+            font: normal 20pt Comic Sans MS;
+            color: yellow
+        }
+        h1{
+            font: normal 29pt Comic Sans MS; 
+        }
+        input{
+            width: 162px;
+            height: 55px;
+            font: normal 20pt Comic Sans MS;
+            color: yellow;
+            background: rgb(129, 10, 10);
+        }
+        input#txtfatia{
+            width: 50px;
+            height: 50px;
+            font: normal 20pt Comic Sans MS;
+            color: yellow
+        }
+    </style>
+</head>
+<body>
+    <h1>Quantas fatias tem a pizza?</h1>
+    <label for="txtfatia">Fatias:</label>
+    <input type="number" name="txtfatia" id="txtfatia"> ---
+    <input type="button" value="comer fatia" onclick="comerFatia()" id="area">
+    <div id="res"></div>
+
+    <script>
+        function comerFatia(){
+            let a = document.getElementById("area")
+            a.style.background = "rgb(119, 0, 0)"
+
+            let c = document.querySelector("input#txtfatia")
+            let res = document.getElementById("res")
+            fatia = Number(c.value)
+            comer = 0
+            while(comer < fatia || fatia > 0){ //enquanto teste lógico feito no início
+                comer++
+                fatia--
+                res.innerHTML += `Comeu a ${comer}° fatia restam ${fatia}</br>`
+            }
+            res.innerHTML += "Você comeu TODAS as fatias da pizza!!!</br>"
+        }
+
+    </script>
+</body>
+</html>

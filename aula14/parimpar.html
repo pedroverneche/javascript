@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Impar</title>
+    <style>
+        body{
+            background: rgb(177, 136, 4);
+        }
+        h1{
+            font: bold 20pt Arial;
+        }
+        p{
+            font: normal 15pt arial; 
+        }
+        input#num{
+            font: normal 15pt arial;
+        }
+        input#area{
+            font: normal 15pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Par ou Impar?</h1>
+    <p>Insira um número qualquer:
+            <input type="number" name="num" id="num">
+                <input id="area" type="button" value="analisar" onclick="analisar()">
+            <div id="res"></div>
+    </p>
+    <script>
+        let a = document.getElementById("area")
+        a.addEventListener("click", clicou)
+        function clicou(){
+            a.style.background = "yellow"
+        }
+        function analisar(){
+            let res = document.getElementById("res")
+            let num = document.querySelector("input#num")
+            let n = Number(num.value)
+            if(n % 2 == 0){
+                res.innerHTML = `<p> O número ${n} é <strong>PAR</strong></p>`
+            }else{
+                res.innerHTML = `<p> O número ${n} é <strong>IMPAR</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>

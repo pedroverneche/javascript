@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovado ou Reprovado</title>
+    <style>
+        body{
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font: normal 20pt Fantasy;
+        }
+        h1{
+            font: normal 25pt Fantasy;
+            color: rgb(255, 0, 157);
+        }
+        button{
+            font-size: 14pt;padding: 30px;
+        }
+        mark{
+            background-color: rgb(0, 255, 13);
+        }
+        mark1{
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprovado Ou Reprovado:</h1>
+    <button onclick="clicar()", id="area">Calcular a média</button>
+    <section id ="result">
+        <p>A média do aluno aparecerá aqui...</p>
+    </section>
+   <script>
+        var a = document.getElementById('area')
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        
+        function entrar() {
+            a.style.background = 'pink'
+        }
+        function sair() {
+            a.style.background = 'white'
+        }
+        function clicar(){
+            let nome = window.prompt('Qual o nome do aluno?')
+            let n1 = Number(window.prompt('Digite a primeira nota:'))
+            let n2 = Number(window.prompt('Digite a segunda nota:'))
+            let n3 = Number(window.prompt('Digite a terceira nota:'))
+            let res = document.querySelector('section#result')
+            var soma = n1 + n2 + n3
+            var media = soma / 3
+            if (sit = media>=6.0?"<mark>APROVADO</mark>":"<mark1>REPROVADO</mark1>") {
+            }
+            res.innerHTML = `<p>A média do/a ${nome} é ${media.toFixed(1)}</br></p>`
+            res.innerHTML += `<p>Situação: ${sit}</p>`
+        }
+   </script>
+</body>
+</html>

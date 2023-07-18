@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor</title>
+    <style>
+        body{
+            background: black;
+            font: normal 20pt arial;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+        function MaioreMenor() {
+            let vetor = [];
+            for (let i = 0; i < 10; i++) {
+                vetor.push(Math.floor(Math.random() * 101));
+            }
+            let maior = vetor[0];
+            let menor = vetor[0];
+            for (let i = 0; i < vetor.length; i++) {
+                if (vetor[i] > maior) {
+                    maior = vetor[i];
+                }else if (vetor[i] < menor){
+                    menor = vetor[i];
+                }
+            }
+            return { vetor, maior, menor };
+        }
+
+        let resultado = MaioreMenor();
+        document.write("Vetor gerado: " + resultado.vetor);
+        document.write("<br>Maior: " + resultado.maior);
+        document.write("<br>Menor: " + resultado.menor);
+    </script>
+</body>
+</html>

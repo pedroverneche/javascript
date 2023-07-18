@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letras Repetidas</title>
+</head>
+<body>
+    <script>
+        let vetor = ["a", "b", "a", "a", "c", "b"];
+        let ordenado = vetor.sort(); // Ordena o vetor em ordem crescente
+        let odd = "";
+
+        for (let i = 0; i < ordenado.length; i++) {
+        let atual = ordenado[i];
+        let proximo = ordenado[i + 1];
+        
+        if (atual === proximo) {
+            continue; // Se o elemento atual for igual ao próximo, segue a iteração
+        } else {
+            odd = atual; // Senão, a variável odd recebe o valor isolado
+            break; // E interrompe o loop, pois já encontrou o valor isolado
+        }
+        }
+        alert("Em ordem: " + ordenado)
+        alert("Valor isolado: " + odd); // Exibe o valor isolado encontrado
+
+
+    </script>
+</body>
+</html>

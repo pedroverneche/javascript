@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão interativo</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font: normal 15pt arial;
+        }
+        div#area{
+            background: green; 
+            color: white;
+            font: normal 20pt Arial;
+            width: 200px; /*largura*/
+            height: 100px; /*altura*/
+            line-height: 100px; /*altura da linha*/
+            text-align:center; /*alinhamento do texto*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Interaja com o botão:</h1>
+    <div id = "area">
+        <strong>Clique aqui!</strong>
+    </div>
+    <script>
+        let a = document.getElementById('area')
+        a.addEventListener('click', clicar) //adiciona um evento clicar
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar(){
+            a.innerHTML = "<strong>Clicou</strong>"
+            a.style.background = "#05c4bc" //azul piscina
+        }
+        
+        function entrar(){
+            a.style.background = "red"
+            a.innerHTML = "<strong>Clique aqui!</strong>"
+        }
+
+        function sair(){
+            a.style.background = "green"
+            a.innerHTML = "<strong>Clique aqui!</strong>"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+    <style>
+        body{
+            background-color: rgb(0, 82, 153);
+            font: normal 20pt Arial;
+            color: white; /* Comentário em CSS */
+        }
+        h1{
+            color: rgb(255, 255, 0)
+        }
+    </style>
+</head>
+<body>
+    <h1>Tratamento de Dados</h1> <!-- Comentário em html -->
+
+    <script>
+        alert("Vamos somar dois números!")
+        let n1 = Number(prompt("Digite um número:")) //converte uma string para um número real e inteiro
+        let n2 = Number(prompt("Digite outro número:")) 
+        let soma = n1 + n2
+        let nome = String(prompt("Ok! Agora digite seu nome:"))
+        let sal = Number(prompt("Seu salário atual R$"))
+        document.write(`A soma entre <strong>${n1}</strong> e <strong>${n2}</strong> é igual a <strong>${soma}</strong></br>`) //usa crase no lugar de aspas 
+        document.write(`${nome} tem <strong>${nome.length}</strong> letras</br>`) //mostra quantas letras tem o nome
+        document.write(`Seu nome em maiúsculas fica <strong>${nome.toUpperCase()}</strong></br>`) //mostra o nome em MAIÚSCULAS
+        document.write(`Seu nome em maiúsculas fica <strong>${nome.toLowerCase()}</strong></br>`) //mostra o nome em minúsculas
+        //<strong> deixa em negrito e </br> quebra a linha
+        document.write(`Seu salário em 1 casa decimal R$${sal.toFixed(1)}</br>`) //mostra em 1 casa decimal
+        document.write(`Seu salário em Dólar ${sal.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})}`) //mostra o US$ na frente do numero (pode trocar entre outras moedas)
+    </script>
+</body>
+</html>

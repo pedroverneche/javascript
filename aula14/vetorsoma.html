@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor Soma</title>
+    <style>
+        body{
+            background: black;
+            font: normal 20pt arial;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function somarVetores(){
+            let vetor1 = []
+            let vetor2 = []
+            resultado = []
+            for (let i = 0; i < 10; i++) {
+                vetor1.push(Math.floor(Math.random() * 101))
+                vetor2.push(Math.floor(Math.random() * 101))
+                resultado.push(vetor1[i] + vetor2[i])
+            }
+            return {vetor1, vetor2, resultado}     
+        }
+        let res = somarVetores()
+        document.write("Vetor 1: "+res.vetor1)
+        document.write("</br>==============================")
+        document.write("</br>Vetor 2: "+res.vetor2)
+        document.write("</br>==============================")
+        document.write("</br>Soma vetor 1 + vetor 2 = "+res.resultado)
+    </script>
+</body>
+</html>

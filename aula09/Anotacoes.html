@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgb(7, 57, 114);
+            color: white;
+            font: normal 20pt Arial;
+        } 
+        h1{
+            color: rgb(238, 255, 0);
+        }
+        p1{
+            color:rgb(255, 255, 0);
+            font: bold 25pt Arial;
+        } 
+    </style>
+</head>
+<body>
+    <h1>Curso JavaScript</h1>
+    <p>Olá, meu nome é Pedro tenho 18 anos e estou aprendendo a programar em JavaScript.</p>
+    <p1>Introdução ao DOM:</p1>
+    <p><strong>D</strong>ocument<strong> O</strong>bject<strong> M</strong>odel</p>
+    <p1>Árvore DOM:</p1>
+    <p>window -> location, history, document -> html -> head -> meta, title...</p>
+    <p>html -> body-> h1, p, div, p -> strong</p>
+    <p1>Selecionando Elementos:</p1>
+    <p>por Marca //mudando a cor da varialvel marca para amarelo</p>
+    <p>por ID</p>
+    <p>por Nome </p> 
+    <p>por Classe</p>
+    <p>por Seletor</p>
+    <p1>Por Marca:</p1>
+    <p>getElementsByTagName()</p>
+    <p>Ex: var marca = window.document.getElementsByTagName('p')[4] //selecionando o paragrafo com [4(numero do paragrafo)]</p>
+    <p>window.document.write('Escrevendo na tela o comando marca.innerText: ' + marca.innerText)</p>
+    <p1>Por ID:</p1>
+    <div id = 'msg'><strong>getElementById()</strong> //Mudando a cor de fundo e a cor da string</div>
+    </br>
+    <p1>Por Name:</p1>
+    <p>getElementsByName()</p>
+    <p1>Por Classe:</p1>
+    <p>getElementsByClassName()</p>
+    <p>Toda Classe é representada por um . (ponto)</p>
+    <p>Ex: div class = 'msg' Clique em mim div</p>
+    <p>var d = window.document.querrySelector('div.msg')</p>
+    <p1>Por Seletor:</p1>
+    <p><strong>querySelector() e querySelectorAll()</strong></p>
+    <p>TODA div é selecionada por #</p>
+    <p>Ex: div id = 'msg' Clique em mim div</p>
+    <p>var d = window.document.querrySelector('div#msg')</p>
+    <script>
+        var corpo = window.document.body
+        var marca = window.document.getElementsByTagName('p')[4] 
+        var d = window.document.getElementById('msg')
+        var query = window.document.getElementsByTagName('p')[16]
+        query.style.color = 'yellow'
+        query.style.background = 'black'
+        d.style.background = 'black'
+        d.style.color = 'yellow'
+        //window.document.write('Escrevendo na tela o comando marca.innerText: ' + marca.innerText)
+        marca.style.color = 'yellow' //mudando a cor da variavel marca
+        //corpo.style.background = 'blue' -> mudando a cor de fundo
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+    <style>
+        body{
+            background: rgb(2, 119, 2);
+            color: white;
+            font: bold 15pt Arial
+        }
+        h1{
+            font: bold 25pt Arial
+        }
+        input{
+            font: bold 15pt Arial
+        }
+        button{
+            font: bold 15pt Arial
+        }
+    </style>
+</head>
+<body>
+    <h1>Fatorial de um número</h1>
+    <p>
+        Digite um número: 
+        <input type="number" id="txtn">
+        <button onclick="fatorar()">Fatorar</button>
+        <p id="res"></p>
+    </p>
+    <script>
+        function calculaFatorial(txtn){
+            if(txtn==1){
+                return 1
+            }else{
+                return txtn * calculaFatorial(txtn-1)
+            
+            }
+        }
+
+        function fatorar(){
+            let txtn = document.getElementById("txtn").value
+            let res = document.getElementById("res")
+            res.innerHTML += `<p>O fatorial de ${txtn} é ${calculaFatorial(txtn)}</p>`
+        }
+    </script>
+</body>
+</html>

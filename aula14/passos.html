@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atravessando a Rua</title>
+    <style>
+        body{
+            background: rgb(15, 15, 109);
+            font: bold 20pt Arial;
+            color: white
+        }
+        p{
+            margin-top: 10px;
+        }
+        input{
+            width: 50px;
+            height: 30px;
+            font: bold 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Atravessando a Rua</h1>
+    <p>
+        Inicio:
+        <input type="number" id="inicio">
+        Fim: 
+        <input type="number" id="fim">
+        Passo:
+        <input type="number" id="passo">
+        <button onclick="atravessarRua()" id="botaopasso">Dar passo</button>
+        <p id="res"></p>
+    </p>  
+    <script>
+        function atravessarRua(){
+            let inicio = parseInt(document.getElementById("inicio").value)
+            let fim = parseInt(document.getElementById("fim").value)
+            let passo = parseInt(document.getElementById("passo").value)
+            let res = document.getElementById("res")
+            if(inicio>fim){
+                res.innerHTML += "[ERRO] O inicio esta maior que o fim. Digite novamente!</br>"
+            }else{
+                for(let c = inicio;c <= fim;c += passo){
+                   res.innerHTML += `Você deu ${passo} passo(s) e está na posição ${c}. Faltam ${fim - c} passo(s) para chegar ao fim. <br>`
+                }
+            }
+        }
+       
+    </script>
+</body>
+</html>

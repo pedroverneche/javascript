@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma</title>
+    <style>
+        body{
+            background: rgb(0, 0, 0);
+            font: bold 20pt Courier;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="res">Aqui aparecerá o resultado!</div>
+    <script>
+        let res = document.getElementById("res")
+        let vetor = []
+        let soma = 0
+        for(c=1;c<4;c++){
+            vetor[c] = parseInt(prompt(`Digite o ${c}° valor:`))
+            soma += vetor[c]
+        }
+        res.innerHTML = `</br>O resultado da soma é igual a ${soma}`
+    </script>
+</body>
+</html>

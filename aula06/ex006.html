@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando média</title>
+    <style>
+        body{
+            background-color: rgb(1, 75, 139);
+            color: white;
+            font: bold 20pt Courier New;
+        }
+        h1{
+            font: bold 40pt Courier New;
+            color: greenyellow;
+        }
+        button{
+            font-size: 20px;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando Média</h1>
+    <button onclick="clicar()" id="area">Clique aqui</button>
+    <section id="result"> 
+        <p>o cálculo vai aparecer aqui...</p>
+    </section>
+    
+    <script>
+        var a = document.getElementById('area')
+        a.addEventListener("mouseenter", entrar)
+        a.addEventListener("mouseout", sair)
+        
+        function clicar(){
+            let n1 = Number(window.prompt('Digite o primeiro número: '))
+            let n2 = Number(window.prompt('Digite o segundo número: '))
+            let res = document.querySelector("section#result")
+            var soma = n1 + n2
+            var media = soma / 2
+            res.innerHTML = `<p>SOMA: ${soma} </br> MÉDIA: ${media.toFixed(1)}</p>`
+        }
+        function entrar(){
+            a.style.background = 'greenyellow'
+        }
+        function sair(){
+            a.style.background = 'white'
+        }
+    </script>
+</body>
+</html>

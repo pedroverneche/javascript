@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAR OU IMPAR</title>
+    <style>
+        body{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 254, 254);
+            font: normal 15pt Arial;
+        }
+        h1{
+            font: bold 25pt Courier New;
+            color: rgb(0, 238, 255);
+        }
+        div#area{
+            font: bold 15pt Arial;
+            background-color: white;
+            color: rgb(0, 0, 0);
+            width: 200px; /*largura*/
+            height: 100px; /*altura*/
+            line-height: 100px; /*altura da linha*/
+            text-align:center; /*alinhamento do texto*/
+        }
+        p1{
+            font: bold 20pt Courier New;
+            color: rgb(0, 238, 255);
+        }
+        mark{
+            background-color: rgb(0, 238, 255);
+            color:rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>PAR ou IMPAR:</h1>
+    <div id = "area">Clique aqui</br></div>
+    <section id="result">
+        <p>O resultado vai aparecer aqui...</p>
+    </section>
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        
+        function entrar(){ 
+            a.style.background = 'rgb(0, 238, 255)' 
+        }
+        function sair(){
+            a.style.background = 'white' 
+        }
+
+        function clicar(){
+            let n1 = Number(window.prompt('Digite o primeiro número: '))
+            let n2 = Number(window.prompt('Digite o segundo número: '))
+            let n3 = Number(window.prompt('Digite o terceiro número: '))
+            var soma = n1 + n2 + n3 
+            var media = soma / 3
+            let res = document.querySelector('section#result')
+            
+            res.innerHTML = `<p1></br>Info sobre o número <strong>${n1}</strong>:</p1><hr>`
+            if(sit = n1%2==0?"PAR":"IMPAR"){
+            }
+            res.innerHTML += `<p>O número ${n1} é <strong><mark>${sit}</mark></strong></p>`
+            res.innerHTML += `<p>${n1} somado a ele mesmo é = ${n1+n1}</p>`
+            res.innerHTML += `<p>${n1} dividido a ele mesmo é = ${n1/n1}</p>`
+            res.innerHTML += `<p>${n1} multiplicado a ele mesmo é = ${n1*n1}</p></br>`
+            
+            res.innerHTML += `<p1>Info sobre o número <strong>${n2}</strong>:</p1><hr>`
+            if(sit = n2%2==0?"PAR":"IMPAR"){
+            }
+            res.innerHTML += `<p>O número ${n2} é <strong><mark>${sit}</mark></strong></p>`
+            res.innerHTML += `<p>${n2} somado a ele mesmo é = ${n2+n2}</p>`
+            res.innerHTML += `<p>${n2} dividido a ele mesmo é = ${n2/n2}</p>`
+            res.innerHTML += `<p>${n2} multiplicado a ele mesmo é = ${n2*n2}</p></br>`
+
+            res.innerHTML += `<p1>Info sobre o número <strong>${n3}</strong>:</p1><hr>`
+            if(sit = n3%2==0?"PAR":"IMPAR"){
+            }
+            res.innerHTML += `<p>O número ${n3} é <strong><mark>${sit}</mark></strong></p>`
+            res.innerHTML += `<p>${n3} somado a ele mesmo é = ${n3+n3}</p>`
+            res.innerHTML += `<p>${n3} dividido a ele mesmo é = ${n3/n3}</p>`
+            res.innerHTML += `<p>${n3} multiplicado a ele mesmo é = ${n3*n3}</p></br>`
+
+            res.innerHTML += '<p1>Informações adicionais:</p1><hr>'
+
+            res.innerHTML += `Soma de ${n1} + ${n2} + ${n3} = ${soma}</p>`
+            res.innerHTML += `A média entre ${n1}, ${n2} e ${n3} é = ${media.toFixed(2)}</p>`
+        }
+   </script>
+</body>
+</html>

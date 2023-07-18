@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+    <style>
+        body{
+            background: rgb(0, 179, 179);
+            font: bold 20pt Arial;
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Compras:</h1>
+    <section id="res"></section>
+    <script>
+        let sacola = []
+        let c = 0
+        let res = document.getElementById("res")
+        while(c < 5){
+            let item = prompt(`ITEM ${c+1}`)
+            sacola.push(item) //adiciona o item na sacola
+            c++
+        }
+    </script>
+</body>
+</html>

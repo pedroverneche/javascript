@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        body{
+            background: rgb(0, 195, 255);
+            font: bold 15pt Arial;
+        }
+        h1{
+            font: bold 30pt Arial;
+            color: black
+        }
+        input{
+            font: bold 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Super Contador:</h1>
+    <label for="txtinicio">De:</label>
+    <input type="number" name="txtinicio" id="txtinicio">
+    <label for="txtfinal">Até:</label>
+    <input type="number" name="txtfim" id="txtfim">
+    <label for="txtpular">Salto:</label>
+    <input type="number" name="txtpular" id="txtpular">
+    <input type="button" value="Contar" onclick="contador()">
+    <div id="res"></div>
+    <script>
+        function contador(){
+            let i = document.querySelector("input#txtinicio")
+            let f = document.querySelector("input#txtfim")
+            let s = document.querySelector("input#txtpular")
+            let res = document.querySelector("div#res")
+            let inicio = Number(i.value)
+            let fim = Number(f.value)
+            let pular = Number(s.value)
+            if(inicio < 0 || fim < 0){
+                res.innerHTML += "</br>[ERRO] você digitou um número incorreto!</br>"
+            }else{
+                if(inicio < fim){
+                    for(let c=inicio;c<=fim;c+=pular){
+                        res.innerHTML += `${c} | `
+                    }
+                    
+                }else{
+                    for(let c=inicio;c>=fim;c-=pular){
+                        res.innerHTML += `${c} | `
+                    }
+                }
+                res.innerHTML += "Terminei de contar!"
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+    <p>NOMES:
+    </p><button onclick="mostrar()" id="media">MOSTRAR</button>
+    <script>
+        let nomes = ["Amanda", "Lucas", "Otávio", "Mariana"]
+        function mostrar(){
+            for(let i = 0; i < 4; i++){
+                if(nomes[i][0] === "A"){
+                    document.write(`${nomes[i]} começa com a letra A`)
+                }
+            }
+
+        }
+    </script>
+
+
+</body>
+</html>

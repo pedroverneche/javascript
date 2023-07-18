@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia da Semana</title>
+    <style>
+        body{
+            background: rgb(0, 143, 148);
+            font: normal 20pt Arial;
+            color: white;
+        }
+        h1{
+            font: bold 25pt Arial;
+            color: white;
+        }
+        input{
+            font: bold 20pt Arial;
+            width: 45px;
+        }
+        input#area{
+            font: bold 20pt Arial;
+            width: 166px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dias da semana: DOM, SEG, TER, QUA, QUI, SEX, SAB</h1>
+    <label for="txtDia">Coloque um número de 0 a 6:</label>
+    <input type="number" name="txtDia" id="txtDia">
+    <input type="button" value="verificar" id="area" onclick="clicou()">
+    <div id="res"></div>
+    <script>
+        function clicou(){
+            let a = document.getElementById("area")
+            a.style.background = "blue"
+            a.style.color = "white"
+            
+            let d = document.querySelector("input#txtDia")
+            let res = document.getElementById("res")
+            let dia = Number(d.value)
+            
+            switch(dia){
+                case 0:
+                    res.innerHTML += `Dia: ${dia}</br>`
+                    res.innerHTML += "Hoje é <strong>DOMINGO</br>"
+                    break
+                case 1:
+                    res.innerHTML += `Dia: ${dia}</br>`
+                    res.innerHTML += "Hoje é <strong>SEGUNDA-FEIRA</strong></br>"
+                    break
+                case 2:
+                    res.innerHTML += `Dia: ${dia}</br>`
+                    res.innerHTML += "Hoje é <strong>TERÇA-FEIRA</strong></br>"
+                    break
+                case 3:
+                    res.innerHTML += `Dia: ${dia}</br>`
+                    res.innerHTML += "Hoje é <strong>QUARTA-FEIRA</strong></br>"
+                    break
+                case 4:
+                    res.innerHTML += `Dia: ${dia}</br>`
+                    res.innerHTML += "Hoje é <strong>QUINTA-FEIRA</strong></br>"
+                    break
+                case 5:
+                    res.innerHTML += `Dia: ${dia}</br>`
+                    res.innerHTML += "Hoje é <strong>SEXTA-FEIRA</strong></br>"
+                    break
+                case 6:
+                    res.innerHTML += `Dia: ${dia}</br>`
+                    res.innerHTML += "Hoje é <strong>SÁBADO</strong></br>"
+                    break
+        
+                default:
+                    res.innerHTML += "<strong>[ERRO]</strong>dia inválido!</br>"
+                    break
+            }
+
+
+
+        }
+    </script>
+</body>
+</html>

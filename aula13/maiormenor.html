@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor</title>
+    <style>
+        body{
+            background: rgb(70, 0, 110);
+            font: bold 20pt Arial;
+            color: white;
+        }
+        input{
+            width: 100px;
+            font: bold 20pt arial;
+        }
+        div#res{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digite 4 números:</h1>
+    <label for="txtn1">n1:</label>
+    <input type="number" name="txtn1" id="txtn1">
+    <label for="txtn2">n2:</label>
+    <input type="number" name="txtn2" id="txtn2">
+    <label for="txtn3">n3:</label>
+    <input type="number" name="txtn3" id="txtn3">
+    <label for="txtn4">n4:</label>
+    <input type="number" name="txtn4" id="txtn4">
+    <input type="button" value="Clicar" onclick="clicou()">
+
+    <div id="res"></div>
+
+    <script>
+        function clicou(){
+            let num1 = document.querySelector("input#txtn1")
+            let num2 = document.querySelector("input#txtn2")
+            let num3 = document.querySelector("input#txtn3")
+            let num4 = document.querySelector("input#txtn4")
+            let res = document.getElementById("res")
+
+            let n1 = Number(num1.value)
+            let n2 = Number(num2.value)
+            let n3 = Number(num3.value)
+            let n4 = Number(num4.value)
+
+            let vetor = [n1, n2, n3, n4] //vetor
+            res.innerHTML += `Informações sobre o vetor [ ${vetor} ]:</br>`
+            res.innerHTML += `</br>O vetor tem ${vetor.length} elementos</br>`
+            res.innerHTML += `O vetor em ordem crescente: vetor[ ${vetor.sort((a, b) => a - b)} ]</br>` //ordem crescente 
+            res.innerHTML += `O vetor em ordem decrescente: vetor[ ${vetor.sort((a, b) => b - a)} ]</br>` //ordem decrescente
+
+            let maior = vetor[0] //menor e maior numero do vetor
+            let menor = vetor[0]
+            for(i = 0; i < vetor.length; i++){
+                if(vetor[i] > maior){
+                    maior = vetor[i]
+                }if(vetor[i] < menor){
+                    menor = vetor[i]
+                }
+            }
+        
+            res.innerHTML += `Maior número do vetor: ${maior}</br>`
+            res.innerHTML += `Menor número do vetor: ${menor}`
+        }
+    </script>
+</body>
+</html>

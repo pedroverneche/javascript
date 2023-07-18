@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+    <p>
+    <input type="radio" name="converter" id="FpC">Fahrenheit para Celsius </br>
+    <input type="radio" name="converter" id="CpF">Celsius para Fahrenheit </br>
+    </br>Valor a converter:
+        <input type="number" id="valor">
+        <button onclick="converter()">converter</button>
+        <p id="res"></p>
+    </p>    
+    <script>
+
+        function FpC( valor){
+            return ( valor - 32) * (5/9)
+        }
+
+        function CpF( valor){
+            return (1.8* valor + 32)
+        }
+
+        function converter(){
+            let valor = parseInt(document.getElementById("valor").value)
+            let res = document.getElementById("res")
+            
+            if(document.getElementById("FpC").checked == true){
+                res.innerHTML += `Fahrenheit ${valor.toFixed(1)} para Celsius fica ${FpC(valor.toFixed(1))}</br>`
+            }   else if(document.getElementById("CpF").checked==true){
+                res.innerHTML += `Celsius ${valor.toFixed(1)} para Fahrenheit fica ${CpF(valor.toFixed(1))}</br>`
+            }
+        }
+    </script>
+</body>
+</html>

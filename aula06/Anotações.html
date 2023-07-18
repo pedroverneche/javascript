@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotações aula 06</title>
+    <style>
+        body{
+            background-color:rgb(7, 57, 114);
+            color: white;
+            font: normal 20pt Arial;
+        } 
+        h1{
+            color: rgb(255, 255, 0)
+        }
+        p1{
+            color:rgb(255, 255, 0);
+            font: bold 25pt Arial;
+        }  
+    </style>
+</head>
+<body>
+    <h1>Curso de JavaScript</h1>
+    <p>Olá, meu nome é Pedro tenho 18 anos e estou aprendendo a programar em JavaScript.</p>
+    <p1>Conversores de String para Number:</p1>
+    <p>Number.parseInt(n) -> converte a string em um número inteiro</p>
+    <p>Number.parseFloat(n) -> converte a string em um número real</p>
+    <p>Number(n) -> converte a string em um número inteiro e real(RECOMENDADO)</p>
+    <p>EX: var n1 = Number(window.prompt('Digite um número: '))</p>
+    <p1>Conversores de Number para String:</p1>
+    <p>Ex: window.alert ('a soma dos numeros é: ' + soma.toString())  // Jeito mais antigo</p>
+    <p>Ex: window.alert ('a soma dos numeros é: ' + String(soma))    // Jeito mais simples</p>
+    <p1>Formatando Stirngs:</p1>
+    <p>var s = 'JavaScript'</p>
+    <p>Ex1: 'Eu estou aprendendo'+s // Usa concatenação simples</p>
+    <p>Ex2: `Eu estou aprendendo ${s}` // Usa template string (sempre utilize crase no lugar das aspas)</p>
+    <p>s.length // mostra quantos caracteres tem a variavel</p>
+    <p>s.toUpperCase // mostra tudo em MAIUSCULAS</p>
+    <p>s.toLowerCase // mostra tudo em minusculas</p>
+    <p1>Formatando Números:</p1>
+    <p>var n1 = 1543.5</p>
+    <p>n1.toFixed(2)  // Coloca em duas casas decimais (para colocar mais ou menos casas troque o numero entre parênteses)</p>
+    <p>n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'}) // mostra o R$ na frente do numero (pode trocar entre outras moedas)</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumento Salarial</title>
+    <style>
+        body{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 251, 0);
+            font: normal 20pt Times New Roman;
+        }
+        button{
+            height: 100px;
+            width: 200px;
+            font-size: 15pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aumento salarial</h1>
+    <button onclick="clicar()", id="area">Calcular novo salário</button>
+    <section id="result"> 
+        <p>O cálculo aparecerá aqui...</p>
+    </section>
+    <script>
+        var a = document.getElementById('area')
+        a.addEventListener("mouseenter", entrar)
+        a.addEventListener("mouseout", sair)
+
+        function entrar(){
+            a.style.background = 'rgb(255, 251, 0)'
+        }
+        function sair(){
+            a.style.background = 'white'
+        }
+        function clicar() {
+            let sal = Number(window.prompt('Informe o salário atual do funcionário R$'))
+            let aum = Number(window.prompt('Quanto vc quer aumentar? '))
+            let nsal = sal+(sal * aum)/ 100
+            let res = document.querySelector("section#result")
+            res.innerHTML = `<p>Salário atual: R$${sal.toFixed(2)} </br> Novo salário com um aumento de ${aum}%: R$${nsal.toFixed(2)}</p>`
+        }
+        
+    </script>
+</body>
+</html>

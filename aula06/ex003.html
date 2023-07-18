@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body {
+            background-color:rgb(7, 57, 114); /*Isso é um comentário*/
+            color: white; 
+            font: normal 20pt Arial;
+        }   
+        h1{
+            color: rgb(255, 255, 0)
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1> <!--Isso é um comentário-->
+    <p>Já me livrei da maldição</p>
+     <script>
+            var n1 = Number(window.prompt('Digite um número: ')) //Converter usando Number(n)
+            var n2 = Number(window.prompt('Digite outro número: '))
+            var soma = n1 + n2
+            window.alert(`O valor da soma entre ${n1} + ${n2} = ${soma}`) //template string usando acento grave ` e ${s}
+            // Conversores de Strings para Numbers -> Number(n), Number.parseInt(n), Number.parseFloat(n)
+            // (number + number) para adição
+            // Conversores de Numbers para Strings -> String(n) ou n.toString()
+            // (string + string) para concatenação `${s}` 
+     </script>  
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito a voto</title>
+    <style>
+        body{
+            background: rgb(65, 61, 61);
+            font: normal 20pt Arial;
+            color: white;
+        }
+        h1{
+            font: bold 20pt Arial;
+        }
+        input{
+            width: 50px;
+            height: 50px;
+            font: bold 20pt Arial
+        }
+        input#analis{
+            width: 200px;
+            height: 55px;
+            font: bold 20pt Arial
+        }
+    </style>
+</head>
+<body>
+    <h1>Coloque sua idade e analisaremos se você tem direito a voto:</h1>
+    <label for="txtidade">Idade:</label>
+    <input type="text" name="txtidade" id="txtidade">
+    <input type="button" value="analisar" id="analis" onclick="clicou()"> 
+    <div id="res"></div>
+
+    <script>
+        function clicou(){
+            let idad = document.querySelector("input#txtidade")
+            let res = document.getElementById("res")
+            let id = String(idad.value)
+
+            if(id<16){
+                res.innerHTML += `Você tem ${id} anos.</br>`
+                res.innerHTML += "<strong>Não vota</strong></br>"
+            }else if(id<18 || id >= 65){
+                res.innerHTML += `Você tem ${id} anos.</br>`
+                res.innerHTML += "Voto <strong>OPCIONAL</strong></br>"
+            }else {
+                res.innerHTML += `Você tem ${id} anos.</br>`
+                res.innerHTML += "Voto <strong>OBRIGATÓRIO</strong>"
+            }
+        }
+    </script>
+</body>
+</html>

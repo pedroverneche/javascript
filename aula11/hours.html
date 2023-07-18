@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que horas são?</title>
+    <style>
+        body{
+            background: goldenrod;
+            font: bold 20pt Courier
+        }
+        h1{
+            font: bold 29pt Courier
+        }
+        input#txthora{
+            width: 50px;
+            height: 50px;
+            font: bold 20pt Courier;
+        }
+        input#txtmin{
+            width: 50px;
+            height: 50px;
+            font: bold 20pt Courier;
+        }
+        input{
+            width: 160px;
+            height: 55px;
+            font: bold 20pt Courier;
+            background: goldenrod;
+        }
+    </style>
+</head>
+<body>
+    <h1>Coloque abaixo o horário atual</h1>
+    <label for="txthora">hora:</label>
+    <input type="number" name="txthora" id="txthora">
+    <label for="txtmin">min:</label>
+    <input type="number" name="txtmin" id="txtmin"> ---
+    <input type="button" value="verificar" onclick="clicou()">
+    <div id="res"></div>
+
+    <script>
+        function clicou(){
+            let h = document.querySelector("input#txthora")
+            let m = document.querySelector("input#txtmin")
+            let res = document.getElementById("res")
+            hora = Number(h.value)
+            min = Number(m.value)
+            if(hora > 23 || min > 59){
+                res.innerHTML += "</br>[ERRO] você digitou um horário inexistente!"
+            }else{
+                if(hora < 12 || min < 30){
+                    res.innerHTML += `Horário: ${hora}hrs e ${min}min</br>`
+                    res.innerHTML += ("Tenha um Bom Dia!</br>")
+                }else if(hora <= 18){
+                    res.innerHTML += `Horário: ${hora}hrs e ${min}min</br>`
+                    res.innerHTML += ("Tenha uma Boa Tarde!</br>")
+                }else{
+                    res.innerHTML += `Horário: ${hora}hrs e ${min} min</br>`
+                    res.innerHTML += ("Tenha uma Boa Noite!</br>")
+                }
+            }
+        }
+    </script>
+</body>
+</html>

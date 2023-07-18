@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Pares e Impares</title>
+    <style>
+        body{
+            background: rgb(0, 32, 75);
+            font: normal 20pt courier new;
+            color: white
+        }
+        h1{
+            font: bold 20pt courier new;
+            color: white
+        }
+        button{
+            width: 800px;
+            font: bold 100pt arial
+        }
+    </style>
+</head>
+<body>
+    <h1>Aqui vamos mostrar a Soma dos Numeros Pares e Impares a partir de um array:</h1>
+    <p>
+        <p id="array">Array : </p>
+        <button onclick="mostrar()">SOMAR</button>
+        <p id="res"></p>
+    </p>
+    <script>
+       let arrayNumbers = [3, 6, 7, 9, 17, 8, 99, 43, 22, 54, 60, 90, 33]
+       let array = document.getElementById("array")
+       array.innerHTML += ("["+arrayNumbers+"]")
+       let somaImp = 0
+       let nImp = 0
+       let somaPar = 0
+       let nPar = 0
+       function calcular(){
+            for(let c=0; c < arrayNumbers.length; c++){
+                    if(arrayNumbers[c] % 2 == 1){
+                        somaImp += arrayNumbers[c]
+                        nImp++
+                    }else{
+                        somaPar += arrayNumbers[c]
+                        nPar++
+                    }
+            }
+       }
+       function mostrar(){
+            calcular()
+            let res = document.getElementById("res")
+            res.innerHTML += `Números Pares: ${nPar} | Soma dos Pares: ${somaPar}</br>Números Impares: ${nImp} | Soma dos Impares: ${somaImp}`
+       }
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim Alunos</title>
+    <style>
+        body{
+            background: rgb(71, 71, 71);
+            font: bold 20pt Constantia;
+            color: white;
+        }
+        h1{
+            font: bold 30pt Constantia;
+        }
+        input#txtaluno{
+            width: 100px;
+            font: bold 20pt Constantia;
+            color: white;
+            background: rgb(0, 0, 0);
+        }
+        input{
+            width: 50px;
+            background: black;
+            font: bold 20pt Constantia;
+            color: white;
+        }
+        input#txtmedia{
+            width: 100px;
+            background: black;
+            font: bold 20pt Constantia;
+            color: white;
+        }
+        section{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Boletim</h1>
+    <label for="txtaluno">Nome do/a aluno:</label>
+    <input type="text" name="txtaluno" id="txtaluno">
+    <label for="nota1">1° nota:</label>
+    <input type="number" name="nota1" id="nota1">
+    <label for="nota2">2° nota:</label>
+    <input type="number" name="nota2" id="nota2">
+    <label for="nota3">3° nota:</label>
+    <input type="number" name="nota3" id="nota3">
+    <input type= "button" value="Média" id="txtmedia" onclick="fazerMedia()">
+    <section id="res">
+        <p>Aguardando informações...</p>
+    </section>
+
+    <script>
+        function fazerMedia(){
+            let n = document.querySelector("input#txtaluno")
+            let no1 = document.querySelector("input#nota1")
+            let no2 = document.querySelector("input#nota2")
+            let no3 = document.querySelector("input#nota3")
+            let res = document.querySelector("section#res")
+            let nome = String(n.value)
+            let n1 = Number(no1.value)
+            let n2 = Number(no2.value)
+            let n3 = Number(no3.value)
+            let soma = n1 + n2 + n3
+            let media = soma / 3
+            if(media < 5){
+                    let sit = "REPROVADO"
+                    res.innerHTML = `Aluno/a: ${nome}</br>Média: ${media.toFixed(1)}</br>Situação: ${sit}`
+            } else{
+                    let sit = "APROVADO"
+                    res.innerHTML = `Aluno/a: ${nome}</br>Média: ${media.toFixed(1)}</br>Situação: ${sit}`
+            }
+        }
+    </script>
+</body>
+</html>
